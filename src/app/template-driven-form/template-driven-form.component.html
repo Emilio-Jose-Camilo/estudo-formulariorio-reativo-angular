@@ -15,11 +15,17 @@
           <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between  start">
             <mat-form-field fxFlex="45">
               <input matInput type="text" class="form-control" value="" placeholder="First Name"
-              [(ngModel)]="client.firstName" name="firstName">
+              [(ngModel)]="client.firstName" name="firstName" #fistName="ngModel" required minlength="3">
+              <mat-hint class="aviso" *ngIf="fistName.invalid && (fistName.touched || fistName.dirty)">
+                Required field
+              </mat-hint>
             </mat-form-field>
             <mat-form-field fxFlex="45">
               <input matInput type="text" class="form-control" value="" placeholder="Last Name"
-              [(ngModel)]="client.lastName" name="lastName">
+              [(ngModel)]="client.lastName" name="lastName" #lastName="ngModel" required min="3">
+              <mat-hint *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+                Required field
+              </mat-hint>
             </mat-form-field>
           </div>
 
@@ -27,7 +33,7 @@
 
             <mat-form-field fxFlex="45">
               <input matInput [matDatepicker]="dtbirth" placeholder="Date of Birth"
-              [(ngModel)]="client.birth" name="birth">
+              [(ngModel)]="client.birth" name="birth" required>
               <mat-datepicker-toggle matSuffix [for]="dtbirth"></mat-datepicker-toggle>
               <mat-datepicker #dtbirth></mat-datepicker>
             </mat-form-field>
@@ -46,11 +52,11 @@
           <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between start">
             <mat-form-field fxFlex="40">
               <input matInput type="text" class="form-control" value="" placeholder="Street"
-              [(ngModel)]="client.street" name="street">
+              [(ngModel)]="client.street" name="street" minlength="30">
             </mat-form-field>
             <mat-form-field fxFlex="30">
               <input matInput type="text" class="form-control" value="" placeholder="City"
-              [(ngModel)]="client.city" name="city">
+              [(ngModel)]="client.city" name="city" required>
             </mat-form-field>
 
             <mat-form-field fxFlex="20">
@@ -69,7 +75,10 @@
           <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="20px">
             <mat-form-field fxFlex="45">
               <input matInput type="text" class="form-control" value="" placeholder="Telephone 1 "
-              [(ngModel)]="client.phone1" name="phone1">
+              [(ngModel)]="client.phone1" name="phone1" #phone1="ngModel" required>
+              <mat-hint class="aviso" *ngIf="phone1.invalid && (phone1.touched || phone1.dirty)">
+                Required field
+              </mat-hint>
             </mat-form-field>
             <mat-form-field fxFlex="45">
               <input matInput type="text" class="form-control" value="" placeholder="Telephone 2"
@@ -77,7 +86,7 @@
             </mat-form-field>
           </div>
 
-          <button mat-button color="primary" type="submit">
+          <button mat-button color="primary" type="submit" [disabled]="!formClient.valid">
             <mat-icon>done</mat-icon>Submit
           </button>
 
