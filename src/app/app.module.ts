@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -49,10 +49,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { FormNativeValidationComponent } from './form-native-validation/form-native-validation.component';
 import { HomeComponent } from './home/home.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
+import { FormControlComponent } from './form-control/form-control.component';
+import { FormGorupComponent } from './form-gorup/form-gorup.component';
+import { FormBilderComponent } from './form-bilder/form-bilder.component';
+import { FormArrayComponent } from './form-array/form-array.component';
 
 
 @NgModule({
-  declarations: [AppComponent, TemplateDrivenFormComponent, FormNativeValidationComponent, HomeComponent],
+  declarations: [AppComponent, TemplateDrivenFormComponent, FormNativeValidationComponent, HomeComponent, FormValidationComponent, FormControlComponent, FormGorupComponent, FormBilderComponent, FormArrayComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -94,7 +99,8 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule
 
 
   ],
