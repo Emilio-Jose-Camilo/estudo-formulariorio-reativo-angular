@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-array',
@@ -16,13 +16,16 @@ export class FormArrayComponent implements OnInit {
       state: [''],
     }),
     phones: this.fb.array(['']),
-    children: this.fb.group({
+    children: this.fb.array([])
+
+    /*this.fb.group({
       name: [''],
       age: [''],
-    }),
-  });
+    }),*/
+  })
 
   phones = this.clientForm.get('phones') as FormArray;
+  children = this.clientForm.get('children') as FormArray;;
 
   constructor(private fb: FormBuilder) {}
 
@@ -36,5 +39,14 @@ export class FormArrayComponent implements OnInit {
 
   addPhone() {
     this.phones.push(this.fb.control(''));
+  }
+  addChildren(){
+    this.children.push(this.fb.group(
+      this.fb.group({
+        name: this.fb.control(''),
+        age: this.fb.control('')
+    })
+    )
+    )
   }
 }
