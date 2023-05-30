@@ -11,39 +11,38 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import {MatButtonModule} from '@angular/material/button';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatInputModule} from '@angular/material/input';
-import {MatListModule} from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatRippleModule} from '@angular/material/core';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatSortModule} from '@angular/material/sort';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatTableModule} from '@angular/material/table';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatTreeModule} from '@angular/material/tree';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTreeModule } from '@angular/material/tree';
 import { MatNativeDateModule } from '@angular/material/core';
-
 
 //Componentes
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
@@ -54,10 +53,34 @@ import { FormControlComponent } from './form-control/form-control.component';
 import { FormGorupComponent } from './form-gorup/form-gorup.component';
 import { FormBilderComponent } from './form-bilder/form-bilder.component';
 import { FormArrayComponent } from './form-array/form-array.component';
+import { LoginGoogleComponent } from './login-google/login-google.component';
+import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule, GoogleLoginProvider } from 'angularx-social-login';
+import { ReactiveFormValidationComponent } from './reactive-form-validation/reactive-form-validation.component';
 
+const config = {
+  providers: [
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider
+      ('446251834346-jgq8a90gdq71firqbfh4u9qqpmsk7e32.apps.googleusercontent.com')
+    }
+  ]
+};
 
 @NgModule({
-  declarations: [AppComponent, TemplateDrivenFormComponent, FormNativeValidationComponent, HomeComponent, FormValidationComponent, FormControlComponent, FormGorupComponent, FormBilderComponent, FormArrayComponent],
+  declarations: [
+    AppComponent,
+    TemplateDrivenFormComponent,
+    FormNativeValidationComponent,
+    HomeComponent,
+    FormValidationComponent,
+    FormControlComponent,
+    FormGorupComponent,
+    FormBilderComponent,
+    FormArrayComponent,
+    LoginGoogleComponent,
+    ReactiveFormValidationComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -100,11 +123,26 @@ import { FormArrayComponent } from './form-array/form-array.component';
     MatTooltipModule,
     MatTreeModule,
     MatNativeDateModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    SocialLoginModule,
+    SocialLoginModule.initialize(config)
 
   ],
-  providers: [],
+
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('Facebook-App-ID-Goes-Here'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

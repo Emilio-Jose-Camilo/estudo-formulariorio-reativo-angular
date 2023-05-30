@@ -8,6 +8,8 @@ import { FormControlComponent } from './form-control/form-control.component';
 import { FormGorupComponent } from './form-gorup/form-gorup.component';
 import { FormBilderComponent } from './form-bilder/form-bilder.component';
 import { FormArrayComponent } from './form-array/form-array.component';
+import { LoginGoogleComponent } from './login-google/login-google.component';
+import { ReactiveFormValidationComponent } from './reactive-form-validation/reactive-form-validation.component';
 
 const routes: Routes = [
   {
@@ -41,7 +43,15 @@ const routes: Routes = [
   {
     path: 'form-array',
     component: FormArrayComponent
-  }
+  },
+    {
+      path: 'login-google',
+      component: LoginGoogleComponent
+    },
+    {
+      path: 'reactive-form',
+      component: ReactiveFormValidationComponent
+    },
 ];
 
 @NgModule({
