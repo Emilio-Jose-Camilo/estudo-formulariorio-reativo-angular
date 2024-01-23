@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-reactive-form-validation',
   templateUrl: './reactive-form-validation.component.html',
-  styleUrls: ['./reactive-form-validation.component.scss']
+  styleUrls: []
 })
 export class ReactiveFormValidationComponent implements OnInit{
 

@@ -16,12 +16,26 @@
 
         <div fxLayout="row" fxLayoutAlign="space-between stretch">
           <mat-form-field fxFlex="45" >
-            <input matInput type="text"
-              class="form-control" value="" placeholder="First Name" [formControl]="firstName" >
+            <input 
+              class="form-control" 
+              matInput 
+              value="" 
+              placeholder="First Name" 
+              type="text"
+              name="FirstName"
+              [formControl]="firstName"
+            >
           </mat-form-field>
           <mat-form-field fxFlex="45">
-            <input matInput type="text"
-              class="form-control" value="" placeholder="Last Name" [formControl]="lastName">
+            <input 
+              matInput 
+              type="text"
+              class="form-control" 
+              value="" 
+              name="lastName"
+              placeholder="Last Name" 
+              [formControl]="lastName"
+            >
           </mat-form-field>
         </div>
 

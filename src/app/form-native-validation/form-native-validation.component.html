@@ -13,8 +13,19 @@
 
           <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between  start">
             <mat-form-field fxFlex="45" >
-              <input matInput type="text" autocomplete="off" [(ngModel)]="campos.firstName" name="firstName"
-                class="form-control" value="" placeholder="First Name" #firstNameField="ngModel" required minlength="3">
+              <input 
+                autocomplete="off" 
+                class="form-control" 
+                matInput 
+                minlength="3"
+                type="text" 
+                value="" 
+                placeholder="First Name" 
+                required 
+                name="firstName"
+                #firstNameField="ngModel" 
+                [(ngModel)]="campos.firstName" 
+              >
 <!--  #firstNameField
                   <mat-hint>
                     {{firstNameField.className}}
@@ -26,8 +37,19 @@
             </mat-form-field>
 
             <mat-form-field fxFlex="45">
-              <input matInput type="text" autocomplete="off"  [(ngModel)]="campos.lastName" name="lastName"
-                class="form-control" value="" placeholder="Last Name" #lastNamefield="ngModel" required minlength="3">
+              <input 
+                autocomplete="off"  
+                matInput 
+                class="form-control" 
+                placeholder="Last Name" 
+                type="text" 
+                value="" 
+                required 
+                minlength="3"
+                name="lastName"
+                #lastNamefield="ngModel" 
+                [(ngModel)]="campos.lastName" 
+              >
 
                 <mat-hint *ngIf="lastNamefield.invalid && (lastNamefield.touched || lastNamefield.dirty)" class="field-error">
                   <p>Required field</p>

@@ -15,7 +15,7 @@ interface Client {
 @Component({
   selector: 'app-template-driven-form',
   templateUrl: './template-driven-form.component.html',
-  styleUrls: ['./template-driven-form.component.scss']
+  styleUrls: []
 })
 export class TemplateDrivenFormComponent implements OnInit{
 

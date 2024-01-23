@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -45,17 +44,17 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatNativeDateModule } from '@angular/material/core';
 
 //Componentes
+import { AppComponent } from './app.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { FormNativeValidationComponent } from './form-native-validation/form-native-validation.component';
-import { HomeComponent } from './home/home.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { FormControlComponent } from './form-control/form-control.component';
 import { FormGorupComponent } from './form-gorup/form-gorup.component';
 import { FormBilderComponent } from './form-bilder/form-bilder.component';
 import { FormArrayComponent } from './form-array/form-array.component';
-import { LoginGoogleComponent } from './login-google/login-google.component';
-import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule, GoogleLoginProvider } from 'angularx-social-login';
 import { ReactiveFormValidationComponent } from './reactive-form-validation/reactive-form-validation.component';
+
+import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule, GoogleLoginProvider } from 'angularx-social-login';
 
 const config = {
   providers: [
@@ -72,13 +71,12 @@ const config = {
     AppComponent,
     TemplateDrivenFormComponent,
     FormNativeValidationComponent,
-    HomeComponent,
     FormValidationComponent,
     FormControlComponent,
     FormGorupComponent,
     FormBilderComponent,
     FormArrayComponent,
-    LoginGoogleComponent,
+
     ReactiveFormValidationComponent,
   ],
   imports: [
@@ -125,6 +123,8 @@ const config = {
     MatNativeDateModule,
     ReactiveFormsModule,
     SocialLoginModule,
+    MatStepperModule,
+    MatSliderModule,
     SocialLoginModule.initialize(config)
 
   ],

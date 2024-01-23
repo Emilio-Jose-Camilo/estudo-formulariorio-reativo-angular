@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
   templateUrl: './form-control.component.html',
-  styleUrls: ['./form-control.component.scss']
+  styleUrls: []
 })
-export class FormControlComponent implements OnInit{
+export class FormControlComponent implements OnInit {
 
-  firstName = new FormControl('');
+  firstName = new FormControl('', Validators.required);
   lastName = new FormControl('');
 
 
   //code: string[] = ['', '', '', '', '', '',];
 
-  constructor(){}
+  constructor() { }
 
   ngOnInit(): void {
     this.firstName.valueChanges

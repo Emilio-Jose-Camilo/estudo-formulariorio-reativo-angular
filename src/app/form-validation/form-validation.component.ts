@@ -3,10 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-form-validation',
   templateUrl: './form-validation.component.html',
-  styleUrls: ['./form-validation.component.scss']
+  styleUrls: []
 })
 export class FormValidationComponent implements OnInit{
-
 
   client = {
     firstName: '',
@@ -20,7 +19,7 @@ export class FormValidationComponent implements OnInit{
     phone1: '',
     phone2: ''
   }
-
+  
   ngOnInit(): void {
 
   }

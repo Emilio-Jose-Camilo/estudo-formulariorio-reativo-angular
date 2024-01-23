@@ -4,7 +4,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-form-array',
   templateUrl: './form-array.component.html',
-  styleUrls: ['./form-array.component.scss'],
+  styleUrls: [],
 })
 export class FormArrayComponent implements OnInit {
   clientForm = this.fb.group({

@@ -4,37 +4,35 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-form-gorup',
   templateUrl: './form-gorup.component.html',
-  styleUrls: ['./form-gorup.component.scss']
+  styleUrls: []
 })
-export class FormGorupComponent implements OnInit{
+export class FormGorupComponent implements OnInit {
 
   clientForm = new FormGroup({
-    firstName : new FormControl(''),
-    lastName : new FormControl(''),
-    address : new FormGroup({
-      street : new FormControl(''),
-      postalCode : new FormControl(''),
-      neighborhood : new FormControl(''),
-      cidade : new FormControl(''),
-      state : new FormControl('')
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormGroup({
+      street: new FormControl(''),
+      postalCode: new FormControl(''),
+      neighborhood: new FormControl(''),
+      cidade: new FormControl(''),
+      state: new FormControl(''),
+      city: new FormControl(''),
     })
   });
 
   states = ["SP", "PR", "SC", "RS", "PA", "RO", "MA", "AC", "AL", "AP", "AM",
-  "BA", "CE", "DF", "ES", "GO", "MT", "MS", "MG", "PB", "PE", "PI", "RJ", "RN",
-  "RR", "SE", "TO"]
+    "BA", "CE", "DF", "ES", "GO", "MT", "MS", "MG", "PB", "PE", "PI", "RJ", "RN",
+    "RR", "SE", "TO"]
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
-
+    console.log(this.clientForm);
   }
 
-  submit(){
+  submit() {
     console.log(this.clientForm.value); //Retorna o valor do formulário
-    console.log(`
-    
-    `)
 
   }
 

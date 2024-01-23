@@ -8,7 +8,7 @@ interface Campos {
 @Component({
   selector: 'app-form-native-validation',
   templateUrl: './form-native-validation.component.html',
-  styleUrls: ['./form-native-validation.component.scss']
+  styleUrls: []
 })
 export class FormNativeValidationComponent implements OnInit{
 
@@ -23,6 +23,6 @@ export class FormNativeValidationComponent implements OnInit{
 
   }
   onSubmit() {
-    console.log(this.campos)
+    console.log(this.firstName + this.lastName)
   }
 }

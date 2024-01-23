@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-form-bilder',
   templateUrl: './form-bilder.component.html',
-  styleUrls: ['./form-bilder.component.scss'],
+  styleUrls: [],
 })
 export class FormBilderComponent implements OnInit {
   /*
